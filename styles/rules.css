@@ -1,0 +1,70 @@
+body {
+  background-color: burlywood;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  font-size: 2rem;
+  /* mobile first -- make a big column  */
+  grid-template-rows: 80px 100px 1fr 80px;
+  grid-template-columns: 1fr;
+  grid-template-areas:  "header"
+                        "aside"
+                        "main"
+                        "footer";
+}
+
+header {
+  background-color: hotpink;
+  grid-area: header;
+}
+
+aside {
+  background-color: chartreuse;
+  grid-area: aside;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+  background-color: darkturquoise;
+}
+/* media queries detect 'media/device types' apply specif rules based on what they */
+/* check if the screen is less than 900px -- if so go ahead and use these styles if/else style */
+/* @media screen and (max-width: 900px) { */
+/* ancient lore of media queires  */
+/* @media media-type (media-feature) */
+
+/* @media (max-width: 900px) {
+  body {
+    background-color: black;
+    color: hotpink;
+  }
+
+  h1 {
+    font-size: 10rem;
+  }
+} */
+
+/* does screen support hover? */
+/* @media (hover: hover) {
+  body {
+    background-color: aquamarine;
+  }
+}  */
+/* min-wdith runs these styles if the screen is greater */
+@media screen and (min-width: 900px) {
+  /* change the layout of the body for big screens */
+  body {
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-columns: 100px 1fr;
+    grid-template-areas:  "header header"
+                          "aside main"
+                          "footer footer"
+  }
+}
